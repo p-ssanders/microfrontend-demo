@@ -1,0 +1,5 @@
+rootProject.name = 'composite-ui-demo'
+include 'app-one'
+include 'app-two'
+include 'composite-ui'
+

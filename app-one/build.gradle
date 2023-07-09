@@ -1,0 +1,22 @@
+plugins {
+    id "com.github.node-gradle.node" version "5.0.0"
+}
+
+yarn_install {
+    workingDir = file('./src/main/frontend')
+}
+
+yarn_build {
+    workingDir = file('./src/main/frontend')
+    dependsOn('yarn_install')
+}
+
+task copyFrontendBuildIntoStatic(type: Copy) {
+    from file('./src/main/frontend/build')
+    into "$buildDir/resources/main/static"
+}
+
+processResources {
+    dependsOn('yarn_build')
+    dependsOn('copyFrontendBuildIntoStatic')
+}
