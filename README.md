@@ -1,4 +1,4 @@
-#   composite-ui-demo
+#   Microfrontend Demo
 
 This repository contains 3 applications intended to demonstrate run-time composition of UIs:
  
