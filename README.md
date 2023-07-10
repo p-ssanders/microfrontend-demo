@@ -6,8 +6,7 @@ This repository contains 3 applications intended to demonstrate run-time composi
 - app-one
 - app-two
 
-The `composite-ui` UI loads the content of `app-one`'s UI by default below its content, a navigation bar, which provides
-navigation to load the content of `app-two`'s UI.
+Each app exposes an `asset-manifest.json` which includes a link to the app's main JavaScript bundle. The `composite-ui` provides a navigation bar whose links load the content of `app-one` or `app-two` by requesting the respective app's manifest, and downloading the app's bundle. Each app's bundle includes a function called `render{AppName}` that the composite-ui invokes to render the app into the DOM of the composite-ui.
 
 ##  Build
 
